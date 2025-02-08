@@ -56,30 +56,31 @@ void loop() {
 `void loop()` inneholder to `if` setninger som er helt like med unntak av hvilken pinne som blir avlest. Vi kan ta det linje for linje:
 
 ```
-	if (digitalRead(BUTTON_PIN1) == LOW) {
+if (digitalRead(BUTTON_PIN1) == LOW) {
 ```
 
 `if` setning inneholder en betingelse og et innhold. Betingelsen i denne `if` setningen er 
 ```
-	digitalRead(BUTTON_PIN1) == LOW
+digitalRead(BUTTON_PIN1) == LOW
 ```
 
 `digitalRead(pin)` leser av en `pin`, i dette tilfellet `BUTTON_PIN1`, altså 2. Den vil være `HIGH` så lenge knappen ikke er trykket inn, for da blir den `LOW`. `==` betyr er lik. 
 Betingelsen for `if` setningen er altså at pinne 13 er lik `LOW` og da skal innholdet kjøres.
 
 ```
-	ledState = !ledState
+ledState = !ledState
 ```
+
 `ledState` er en boolsk variabel, og denne setningen endrer den. Med andre ord, var `ledState` `false` så blir den `true` og var den `true` så blir den `false`.
 
 ```
-	digitalWrite(LED_PIN, ledState);
+digitalWrite(LED_PIN, ledState);
 ```
 
 `LED_PIN` (13) blir satt til `ledState` som enten er `true` eller `false`, eller `HIGH` eller `LOW`.
 
 ```
-	delay(250);
+delay(250);
 ```
 
 Pauser programmet i 0,25 sekund. Dette for at ett trykk på knappen ikke skal bli registrert flere ganger.
